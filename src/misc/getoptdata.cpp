@@ -27,6 +27,7 @@ int GetOptData::GetOpt()
 
 		s = this->arguments[0];
 		if (s[0] != '-') return -1; // No leading '-' -> not an option -> finished.
+		if (s.length() <= 1) return -1; // No option parameter after '-'.
 
 		this->arguments = this->arguments.subspan(1);
 
